@@ -53,7 +53,7 @@ def checkWordlist(wordlist):
 
 def interactiveMode(verbose):
     mode = "Interactive"
-    banner(mode, verbose)
+    banner1(mode, verbose)
     print ''
     print 'Please input the names you would like checked.'
     print '[Separated by comma. For example: Sanduuz,created,this,script.]\n'
@@ -89,7 +89,7 @@ def main():
         mode = "Passive"
         wordlist = options.wordlist
         verbose = options.verbose
-        banner(mode, verbose)
+        banner(mode, verbose, wordlist)
         checkWordlistValue = checkWordlist(wordlist)
         if checkWordlistValue == True:
             checkName(wordlist, verbose)
@@ -98,7 +98,25 @@ def main():
         else:
             print "What the fuck causes this error."
 
-def banner(mode, verbose):
+def banner(mode, verbose, wordlist):
+    banner = """
+    _____   ________
+   /  _/ | / / ____/      ____  __  __
+   / //  |/ / /          / __ \/ / / /
+ _/ // /|  / /____  __  / /_/ / /_/ /
+/___/_/ |_/\_____/ /_/ / .___/\__, /
+                      /_/    /____/
+
+Instagram Name Checker
+
+Author: Sanduuz
+Instagram: @Sanduuz
+E-mail: 19jdmz5js@protonmail.ch
+
+[Mode] """+mode+" | [Verbosity] "+str(verbose)+"\n[Wordlist] "+os.path.abspath(wordlist)
+    print banner
+
+def banner1(mode, verbose):
     banner = """
     _____   ________
    /  _/ | / / ____/      ____  __  __
